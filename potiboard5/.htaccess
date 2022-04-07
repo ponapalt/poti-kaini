@@ -11,3 +11,21 @@
 <Files "manifest.json">
 	Require all granted
 </Files>
+
+<FilesMatch "\.php$">
+  AuthName      "User=sakura Password=unyu"
+  AuthType      Basic
+  AuthUserFile  /home/web/bts/anonymous.pwd
+  <LimitExcept GET>
+    <RequireAny>
+      # お絵かきアプリの保存通信（mode がクエリ文字列にあるもの: saveimage / picpost）
+      Require expr "%{QUERY_STRING} =~ /(^|&)mode=(saveimage|picpost)(&|$)/"
+      # fetch 通信のアプリ（picrep 等、mode が POST 本文にあるもの）
+      Require expr "%{HTTP:X-Requested-With} =~ /^(PaintBBS|chickenpaint|tegaki|klecks|axnos)$/"
+      # それ以外の POST（regist 等の本投稿・管理）は従来どおりダミーパスワード必須
+      Require valid-user
+    </RequireAny>
+  </LimitExcept>
+</FilesMatch>
+
+DirectoryIndex index.html
