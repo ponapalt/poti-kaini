@@ -204,7 +204,7 @@
 				{{-- 最初のループ --}}
 				{{-- レスモードの時 --}}
 				@if($resno)
-				<h2><span class="oyano">[{{$res['no']}}]</span> {{$res['sub']}}</h2>
+				<h2><a href="{{$self}}?res={{$res['no']}}" class="permalink"><span class="oyano">[{{$res['no']}}]</span> {{$res['sub']}}</a></h2>
 				@else
 				<h2><a href="{{$self}}?res={{$res['no']}}"><span class="oyano">[{{$res['no']}}]</span>
 						{{$res['sub']}}</a></h2>
