@@ -203,6 +203,7 @@
 			@if($continue_mode)
 			<h2 class="oekaki">CONTINUE MODE</h2>
 			@endif
+			<ul>{!!$addinfo!!}</ul>
 		</header>
 		@endif
 
