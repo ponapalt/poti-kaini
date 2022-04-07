@@ -16,6 +16,27 @@
 			display: none;
 		}
 	</style>
+	
+	<script type="text/javascript" src="https://s.hatena.ne.jp/js/HatenaStar.js"></script>
+
+	<script type="text/javascript">
+		Hatena.Star.Token = 'abcb1594afacbd88eff4a34e00703d16febf6129';
+		Hatena.Star.SiteConfig = {
+			entryNodes: {
+				'div.thread': {
+					uri: 'h2 a.permalink',
+					title: 'h2',
+					container: 'h3 span.hstar'
+				} , 
+				'div.res': {
+					uri: 'h4 span.oyaresno a.permalink_res',
+					title: 'h4 span.oyaresno',
+					container: 'h4'
+				}
+			}
+		};
+	</script>
+
 	<title>{{$title}}</title>
 	@if($notres)
 	{{-- このあたりは各自変更してもらえると嬉しいです
@@ -217,7 +238,7 @@
 				@if($resno)
 				<h2><a href="{{$self}}?res={{$res['no']}}" class="permalink"><span class="oyano">[{{$res['no']}}]</span> {{$res['sub']}}</a></h2>
 				@else
-				<h2><a href="{{$self}}?res={{$res['no']}}"><span class="oyano">[{{$res['no']}}]</span>
+				<h2><a href="{{$self}}?res={{$res['no']}}" class="permalink"><span class="oyano">[{{$res['no']}}]</span>
 						{{$res['sub']}}</a></h2>
 				@endif
 				{{-- 親記事のヘッダ --}}
@@ -231,6 +252,7 @@
 							href="{{$res['url']}}" target="_blank" rel="nofollow noopener noreferrer">URL</a>]</span>
 					@endif @if($res['updatemark']){{$res['updatemark']}}@endif
 				@endif
+				<span class="hstar"></span>
 				</h3>
 				<hr>
 				@else
@@ -239,7 +261,7 @@
 				<div class="res">
 					{{-- 子レスヘッダ --}}
 					<h4>
-					<span class="oyaresno" id="{{$res['no']}}">[{{$res['no']}}]</span>
+					<span class="oyaresno" id="{{$res['no']}}">[<a href="{{$self}}?res={{$ress[0]['no']}}#{{$ress[0]['no']}}-{{$res['no']}}" class="permalink_res">{{$res['no']}}</a>]</span>
 					@if(!isset($res['not_deleted'])||$res['not_deleted'])
 						<span class="rsub">{{$res['sub']}}</span> :
 						<span class="name"><a
