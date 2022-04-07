@@ -9,28 +9,28 @@
 /* ---------- 最初に設定する項目 ---------- */
 //管理者パスワード
 //必ず変更してください。
-$ADMIN_PASS = 'kanripass';
+//$ADMIN_PASS = '';
 
 //最大ログ数
 //古いログから順番に消えます(最低1000)
-define('LOG_MAX', '2000');
+define('LOG_MAX', '50000');
 
 //テーマ(テンプレート)のディレクトリ。'/'まで
 //テーマのテンプレートが入っているディレクトリを指定してください。
 //例えば｢MONO｣を使いたい場合は theme/ 、｢PINK｣を使いたい時は pink/ とします。
 //初期値は pink/ です。
 
-define('SKIN_DIR', 'pink/');
+//define('SKIN_DIR', 'pink/');
 
-// define('SKIN_DIR', 'theme/');
+define('SKIN_DIR', 'theme/');
 
 //メール通知のほか、シェアボタンなどで使用
 //設置場所のURL。phpのあるディレクトリの'/'まで
-define('ROOT_URL', 'http://example.com/oekaki/');
+define('ROOT_URL', 'https://oekaki.shillest.net/');
 
 
 //掲示板のタイトルタイトル（<title>とTOP）
-define('TITLE', 'お絵かき掲示板');
+define('TITLE', '伺的お絵かき/投稿集会所');
 
 //「ホーム」へのリンク
 // 自分のサイトにお絵かき掲示板がある、という慣習からのものです。
@@ -63,7 +63,7 @@ define('DEFAULT_TIMEZONE','Asia/Tokyo');
 //シェアボタンを表示する する:1 しない:0
 //対応テンプレートが必要
 //設置場所のURL ROOT_URL で設定したurlをもとにリンクを作成
-define('SHARE_BUTTON', '0');
+define('SHARE_BUTTON', '1');
 
 /* ---------- スパム対策 ---------- */
 
@@ -223,8 +223,8 @@ define('USE_PAINT', '1');
 
 //お絵描き最大サイズ（これ以上は強制でこの値
 //最小値は幅、高さともに 300 固定です
-define('PMAX_W', '800');	//幅
-define('PMAX_H', '800');	//高さ
+define('PMAX_W', '1000');	//幅
+define('PMAX_H', '1000');	//高さ
 
 //お絵描きデフォルトサイズ
 define('PDEF_W', '300');	//幅
@@ -321,7 +321,7 @@ define('IMAGE_SIZE', '512');
 //(例)'<li>お知らせデース</li>
 //     <li>サーバの規約でアダルト禁止</li>'
 //要対応テーマ
-$addinfo='';
+$addinfo='<li style="color: red;">投稿や「お絵かき」時にパスワードダイアログが出ます。ID=sakura / パスワード=unyu を入力してください。</li>';
 
 // 連続・二重投稿対象セキュリティレベル
 // ※連続・二重投稿チェック対象を決める条件
@@ -359,7 +359,7 @@ define('LANG', 'Japanese');
 
 //お絵かき画像ファイル名の頭文字
 //お絵かき投稿した画像のファイル名には、必ずこれが先頭に付きます
-define('KASIRA', 'OB');
+define('KASIRA', 'sspnt');
 
 //テンポラリ内のファイル有効期限(日数)
 define('TEMP_LIMIT', '3');
@@ -400,7 +400,7 @@ define('C_SECURITY_TIMER', '');
 
 //ペイント画面のパスワードの暗号鍵
 //あまり頻繁に変更しない事
-define('CRYPT_PASS','fbgtK4pj9t8Auek');
+//define('CRYPT_PASS','');
 //↑ 暗号化と解読のためのパスワード。
 //phpの内部で処理するので覚えておく必要はありません。
 //管理パスとは別なものです。
@@ -431,7 +431,7 @@ define('APPLET', '2');
 
 //urlパラメータを追加する する:1 しない:0
 //ブラウザのキャッシュが表示されて投稿しても反映されない時は1。
-define('URL_PARAMETER', '0');
+define('URL_PARAMETER', '1');
 
 //画像やHTMLファイルのパーミッション。
 define('PERMISSION_FOR_DEST', 0606);//初期値 0606
@@ -452,4 +452,6 @@ define('CHECK_CSRF_TOKEN', '1');
 //する:1 にすると外部サイトからの不正な投稿を拒絶することができます。
 //しかし古いテーマで する:1 に設定すると、投稿ができなくなります。 
 //2021年7月以前に配布された古いテーマファイルを使っている時は、しない:0
+
+include './config_ext.php';
 

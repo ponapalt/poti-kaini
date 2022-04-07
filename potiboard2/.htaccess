@@ -5,7 +5,19 @@
 		Header set Expires "Thu, 01 Dec 1994 16:00:00 GMT"
 	</IfModule>
 </Files>
+
 <files ~ "(^config\.php$|\.(ini|log|dat|json)$)">
 	order allow,deny
 	deny from all
 </files>
+
+<FilesMatch "\.php$">
+  AuthName      "User=sakura Password=unyu"
+  AuthType      Basic
+  AuthUserFile  /home/web/bts/anonymous.pwd
+  <LimitExcept GET>
+  Require valid-user
+  </LimitExcept>
+</FilesMatch>
+
+DirectoryIndex index.html

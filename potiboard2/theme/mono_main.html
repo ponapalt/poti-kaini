@@ -84,6 +84,15 @@
 			</div>
 			<hr>
 			<div>
+				<p style="font-size: small;">うか・てき [伺的] 《形動》 伺かのように見える何か。伺かゴーストであってもなくてもよい。<br>
+				判断基準はきっと心の中にある。【初出】勉強会</p>
+				
+				<p style="font-size: small; margin-top: 8px;">「お絵かき」で昔と同じUIでその場で描画可能。「投稿」で直接ファイル投稿可。特に理由がなければ [USE NEO=ON] で。<br>
+				かんたんならくがきから、らくがき（迫真）まで、どうぞお気軽に。なんでもお待ちしております。<br>
+				何かありましたら管理者まで。 <a href="https://ukadon.shillest.net/@ponapalt">Mastodon:ponapalt</a> / <a href="https://twitter.com/ponapalt">twitter:ponapalt</a></p>
+			</div>
+			<hr>
+			<div>
 				<nav class="menu">
 					<a href="<% echo(self2) %>">[トップ]</a>
 					<% def(for_new_post) %>
@@ -175,11 +184,11 @@
 						<input type="hidden" name="MAX_FILE_SIZE" value="<% echo(maxbyte) %>">
 						<table>
 							<tr>
-								<td>Name<% def(usename) %><% echo(usename) %><% /def %></td>
+								<td>名前<% def(usename) %><% echo(usename) %><% /def %></td>
 								<td><input class="form" type="text" name="name" size="28" value="" autocomplete="username"></td>
 							</tr>
 							<tr>
-								<td>Mail</td>
+								<td>メール</td>
 								<td><input class="form" type="text" name="email" size="28" value="" autocomplete="email"></td>
 							</tr>
 							<tr>
@@ -187,19 +196,19 @@
 								<td><input class="form" type="text" name="url" size="28" autocomplete="url"></td>
 							</tr>
 							<tr>
-								<td>Sub<% def(usesub) %><% echo(usesub) %><% /def %></td>
+								<td>タイトル<% def(usesub) %><% echo(usesub) %><% /def %></td>
 								<td>
 									<input class="form" type="text" name="sub" size="20" value="<% def(resub) %><% echo(resub) %><% /def %>" autocomplete="section-sub">
 									<input class="button" type="submit" value="送信する">
 								</td>
 							</tr>
 							<tr>
-								<td>Com<% def(usecom) %><% echo(usecom) %><% /def %></td>
+								<td>本文<% def(usecom) %><% echo(usecom) %><% /def %></td>
 								<td><textarea class="form" name="com" cols="28" rows="4" wrap="soft" id="p_input_com"></textarea></td>
 							</tr>
 							<% def(upfile) %>
 							<tr>
-								<td>UpFile</td>
+								<td>ファイル添付</td>
 								<td>
 									<input class="form" type="file" name="upfile" accept="image/*">
 									<span class="preview"></span>
@@ -211,7 +220,7 @@
 							</tr>
 							<% /def %>
 							<tr>
-								<td>Pass</td>
+								<td>削除編集パスワード</td>
 								<td><input class="form" type="password" name="pwd" value="" autocomplete="current-password"><small>(記事の編集削除用)</small></td>
 							</tr>
 						</table>
@@ -399,6 +408,9 @@
 				<p>
 					<a href="https://paintbbs.sakura.ne.jp/poti/" target="_blank" rel="nofollow noopener noreferrer" title="POTI-board EVO <% echo(verlot) %>">POTI-board EVO <% echo(ver) %></a>
 					Web Style by <a href="https://paintbbs.sakura.ne.jp/poti/" target="_blank" rel="nofollow noopener noreferrer" title="MONO <% echo(tver) %>">MONO</a>
+				</p>
+				<p>
+					<a href="https://github.com/ponapalt/poti-kaini" target="_blank" rel="nofollow noopener noreferrer" title="This is modified version. Please check difference here.">This is modified version. Please check difference here.</a>
 				</p>
 				<p>
 					OriginalScript -
