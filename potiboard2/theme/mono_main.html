@@ -43,6 +43,25 @@
 			}
 		</script>
 				 
+		<script type="text/javascript" src="https://s.hatena.ne.jp/js/HatenaStar.js"></script>
+		<script type="text/javascript">
+		Hatena.Star.Token = 'abcb1594afacbd88eff4a34e00703d16febf6129';
+		Hatena.Star.SiteConfig = {
+			entryNodes: {
+				'div.thread': {
+					uri: 'h2 a.permalink',
+					title: 'h2',
+					container: 'h3 span.hstar'
+				} , 
+				'div.res_wrap': {
+					uri: 'h4 span.oyaresno a.permalink_res',
+					title: 'h4 span.oyaresno',
+					container: 'h4'
+				}
+			}
+		};
+		</script>
+
 		<title><% echo(title) %></title>
 		<% def(notres) %>
 		<% def(n) %>
@@ -250,11 +269,12 @@
 					<% def(resno) %>
 					<h2><a href="<% echo(self) %>?res=<% echo(oya/no) %>" class="permalink"><span class="oyano">[<% echo(oya/no) %>]</span> <% echo(oya/sub) %></a></h2>
 					<% elsedef %>
-					<h2><a href="<% echo(self) %>?res=<% echo(oya/no) %>"><span class="oyano">[<% echo(oya/no) %>]</span> <% echo(oya/sub) %></a></h2>
+					<h2><a href="<% echo(self) %>?res=<% echo(oya/no) %>" class="permalink"><span class="oyano">[<% echo(oya/no) %>]</span> <% echo(oya/sub) %></a></h2>
 					<% /def %>
 					<h3>
 						<span class="name"><a href="search.php?page=1&amp;imgsearch=on&amp;query=<% echo (oya/encoded_name) %>&amp;radio=2" target="_blank" rel="noopener"><% echo (oya/name) %></a></span><span class="trip"><% echo(oya/trip) %></span> :
 						<% echo(oya/now) %><% def(oya/id) %> ID : <% echo(oya/id) %><% /def %><% def(oya/url) %> <span class="url">[<a href="<% echo(oya/url) %>" target="_blank" rel="nofollow noopener noreferrer">URL</a>]</span> <% /def %> <% def(oya/updatemark) %><% echo(oya/updatemark) %><% /def %>
+						<span class="hstar"></span>
 					</h3>
 					<hr>
 						<% def(oya/src) %>
@@ -288,9 +308,9 @@
 							<% def(oya/res) %>
 							<% each(oya/res) %>
 							<hr>
-							<div class="res_wrap">
+							<div class="res_wrap" id="<% echo(oya/no) %>-<% echo(oya/res/no) %>">
 								<h4>
-									<span class="oyaresno">[<% echo(oya/res/no) %>]</span>
+									<span class="oyaresno">[<a href="<% echo(self) %>?res=<% echo(oya/no) %>#<% echo(oya/no) %>-<% echo(oya/res/no) %>" class="permalink_res"><% echo(oya/res/no) %></a>]</span>
 									<span class="rsub"><% echo(oya/res/sub) %></span> :
 									<span class="name"><a href="search.php?page=1&amp;imgsearch=on&amp;query=<% echo (oya/res/encoded_name) %>&amp;radio=2" target="_blank" rel="noopener"><% echo (oya/res/name) %></a></span><span class="trip"><% echo(oya/res/trip) %></span> : <% echo(oya/res/now) %><% def(oya/res/id) %> ID : <% echo(oya/res/id) %><% /def %><% def(oya/res/url) %> <span class="url">[<a href="<% echo(oya/res/url) %>" target="_blank" rel="nofollow noopener noreferrer">URL</a>]</span><% /def %> 
 									<% def(oya/res/updatemark) %> <% echo(oya/res/updatemark) %><% /def %>
