@@ -248,7 +248,7 @@
 				<% each(oya) %>
 				<div class="thread">
 					<% def(resno) %>
-					<h2><span class="oyano">[<% echo(oya/no) %>]</span> <% echo(oya/sub) %></h2>
+					<h2><a href="<% echo(self) %>?res=<% echo(oya/no) %>" class="permalink"><span class="oyano">[<% echo(oya/no) %>]</span> <% echo(oya/sub) %></a></h2>
 					<% elsedef %>
 					<h2><a href="<% echo(self) %>?res=<% echo(oya/no) %>"><span class="oyano">[<% echo(oya/no) %>]</span> <% echo(oya/sub) %></a></h2>
 					<% /def %>
