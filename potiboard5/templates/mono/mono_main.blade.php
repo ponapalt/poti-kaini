@@ -56,6 +56,16 @@
 			<a href="{{$home}}" target="_top">[ホーム]</a>
 			@if($use_admin_link)<a href="{{$self}}?mode=admin">[管理モード]</a>@endif
 		</div>
+			<hr>
+		<div>
+			<p style="font-size: small;">うか・てき [伺的] 《形動》 伺かのように見える何か。「伺か」のキャラクターであってもなくてもよい。つまり割となんでも良い。【初出】勉強会</p>
+			
+			<p style="font-size: small; margin-top: 8px;">「お絵かき」でその場で描画可能。「投稿」で直接ファイル投稿可。ツール選択ができます。懐かしいUIならPaintBBS NEOかしぃペインター、本格的なやつならKlecksかChickenPaintで。なんでもお待ちしております。<br>
+			何かありましたら管理者まで。 <a href="https://ukadon.shillest.net/@ponapalt">Mastodon:ponapalt</a> / <a href="https://twitter.com/ponapalt">twitter:ponapalt</a></p>
+			
+			<p style="font-size: small; margin-top: 8px;"><span style="color: #009900; font-weight: bold; ">おすすめ：</span><a href="https://s.hatena.ne.jp/">はてなスターにユーザー登録</a>すると投稿やレスのタイトル右の★ボタンで★マークをつけることができます。拍手的な使い方でなんとなくぽちっとしてみるといいと思います。<br>
+			<span style="color: #009900;">星が増えるときっとやる気も増える。ちなみに黄色の★なら何度でも押せるぞ。</span></p>
+		</div>
 		<hr>
 		<div>
 			<nav class="menu">
@@ -130,12 +140,12 @@
 					<input type="hidden" name="MAX_FILE_SIZE" value="{{$maxbyte}}">
 					<table>
 						<tr>
-							<td>Name @if($usename){{$usename}}@endif</td>
+							<td>名前 @if($usename){{$usename}}@endif</td>
 							<td><input class="form" type="text" name="name" size="28" value="" autocomplete="username">
 							</td>
 						</tr>
 						<tr>
-							<td>Mail</td>
+							<td>メール</td>
 							<td><input class="form" type="text" name="email" size="28" value="" autocomplete="email">
 							</td>
 						</tr>
@@ -146,7 +156,7 @@
 						</tr>
 						@endif
 						<tr>
-							<td>Sub @if($usesub){{$usesub}}@endif</td>
+							<td>タイトル @if($usesub){{$usesub}}@endif</td>
 							<td>
 								<input class="form" type="text" name="sub" size="20" value="@if($resub){{$resub}}@endif"
 									autocomplete="section-sub">
@@ -154,13 +164,13 @@
 							</td>
 						</tr>
 						<tr>
-							<td>Com @if($usecom){{$usecom}}@endif</td>
+							<td>本文 @if($usecom){{$usecom}}@endif</td>
 							<td><textarea class="form" name="com" cols="28" rows="4" wrap="soft"
 									id="p_input_com"></textarea></td>
 						</tr>
 						@if($upfile)
 						<tr>
-							<td>UpFile</td>
+							<td>ファイル添付</td>
 							<td>
 								<input class="form" type="file" name="upfile" accept="image/*">
 								<span class="preview"></span>
@@ -168,7 +178,7 @@
 						</tr>
 						@endif
 						<tr>
-							<td>Pass</td>
+							<td>削除編集パスワード</td>
 							<td><input class="form" type="password" name="pwd" value=""
 									autocomplete="current-password"><small>(記事の編集削除用)</small></td>
 						</tr>
