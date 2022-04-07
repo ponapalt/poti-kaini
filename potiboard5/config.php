@@ -9,28 +9,28 @@
 /* ---------- 最初に設定する項目 ---------- */
 //管理者パスワード
 //必ず変更してください。
-$ADMIN_PASS = "kanripass";
+//$ADMIN_PASS = 'kanripass';
 
 //最大ログ数
 //古いログから順番に消えます(最低1000)
-define("LOG_MAX", "3000");
+define('LOG_MAX', '50000');
 
 //テーマ(テンプレート)のディレクトリ。"/"まで
 //テンプレートが入っているディレクトリを指定してください。
 //例えば｢MONO｣を使いたい場合は mono/ 、｢BASIC｣を使いたい時は basic/ とします。
 //初期値は basic/ です。
 
-define("SKIN_DIR", "basic/");
+// define('SKIN_DIR', 'basic/');
 
-// define("SKIN_DIR", "mono/");
+define('SKIN_DIR', 'mono/');
 
 //メール通知のほか、シェアボタンなどで使用
-//設置場所のURL。phpのあるディレクトリの"/"まで
-define("ROOT_URL", "http://example.com/oekaki/");
+//設置場所のURL。phpのあるディレクトリの'/'まで
+define('ROOT_URL', 'https://oekaki.shillest.net/');
 
 
 //掲示板のタイトルタイトル（<title>とTOP）
-define("TITLE", "お絵かき掲示板");
+define('TITLE', '伺的お絵かき/投稿集会所');
 
 //「ホーム」へのリンク
 // 自分のサイトにお絵かき掲示板がある、という慣習からのものです。
@@ -261,8 +261,8 @@ define("PMIN_W", "300");	//幅
 define("PMIN_H", "300");	//高さ
 
 //お絵描き最大サイズ（これ以上は強制でこの値
-define("PMAX_W", "800");	//幅
-define("PMAX_H", "800");	//高さ
+define('PMAX_W', '1000');	//幅
+define('PMAX_H', '1000');	//高さ
 
 //お絵描きデフォルトサイズ
 define("PDEF_W", "300");	//幅
@@ -360,7 +360,7 @@ define("MAX_LOG_FILESIZE", "15");
 //(例)"<li>お知らせデース</li>
 //     <li>サーバの規約でアダルト禁止</li>"
 //要対応テーマ
-$addinfo="";
+$addinfo='<li style="color: red;"><span style="font-weight: bold;">注意：</span>投稿や「お絵かき」時にパスワードダイアログが出ます。ID=sakura / パスワード=unyu を入力してください。</li>';
 
 // 連続・二重投稿対象セキュリティレベル
 // ※連続・二重投稿チェック対象を決める条件
@@ -407,6 +407,8 @@ $servers =
 	["X","https://x.com"],
 	["Bluesky","https://bsky.app"],
 	["Threads","https://www.threads.net"],
+	["mstdn.jp","https://mstdn.jp"],
+	["ukadon.shillest.net","https://ukadon.shillest.net"],
 	["pawoo.net","https://pawoo.net"],
 	["fedibird.com","https://fedibird.com"],
 	["misskey.io","https://misskey.io"],
@@ -456,7 +458,7 @@ define("SECURITY_TIMER", "");
 
 //ペイント画面のパスワードの暗号鍵
 //あまり頻繁に変更しない事
-define("CRYPT_PASS","fbgtK4pj9t8Auek");
+//define('CRYPT_PASS','fbgtK4pj9t8Auek');
 //↑ 暗号化と解読のためのパスワード。
 //phpの内部で処理するので覚えておく必要はありません。
 //管理パスとは別なものです。
@@ -472,7 +474,7 @@ define("USE_CHEERPJ_OLD_VERSION","0");
 
 //urlパラメータを追加する する:1 しない:0
 //ブラウザのキャッシュが表示されて投稿しても反映されない時は1。
-define("URL_PARAMETER", "0");
+define('URL_PARAMETER', '1');
 
 //画像やHTMLファイルのパーミッション。
 define("PERMISSION_FOR_DEST", 0606);//初期値 0606
@@ -496,7 +498,7 @@ define("X_FRAME_OPTIONS_DENY", "1");
 // する: 1 しない: 0
 // する: 1 にするとセキュリティは高まりますが、ログインページがロックされた時の解除に手間がかかります。
 
-define("CHECK_PASSWORD_INPUT_ERROR_COUNT", "0");
+define("CHECK_PASSWORD_INPUT_ERROR_COUNT", "1");
 
 //ftp等でアクセスして、
 // `templates/errorlog/error.log`
@@ -509,4 +511,7 @@ define("CHECK_PASSWORD_INPUT_ERROR_COUNT", "0");
 // する: 1 しない: 0
 // する: 1 にすると、JavaScriptを無効にしているクライアントからの投稿は拒絶されます。
 // また、common.js が対応バージョンでない場合も拒絶されます。
-define("REJECT_WITHOUT_JAVASCRIPT", "1"); 
+define("REJECT_WITHOUT_JAVASCRIPT", "0"); 
+
+include './config_ext.php';
+

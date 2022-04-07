@@ -6,6 +6,9 @@
 		Template <a href="https://paintbbs.sakura.ne.jp/poti/" target="_blank" rel="noopener noreferrer" title="MONO {{$tver}}">MONO</a>
 	</p>
 	<p>
+		<a href="https://github.com/ponapalt/poti-kaini" target="_blank" rel="nofollow noopener noreferrer" title="This is modified version. Please check difference here.">This is modified version. Please check difference here.</a>
+	</p>
+	<p>
 		OriginalScript -
 		<a href="http://www.punyu.net/" target="_blank" rel="noopener noreferrer" title="POTI-board (by PunyuNet)">POTI-board</a>
 		<span title="futaba.php v0.8 lot.031015 (by futaba)">futaba.php</span>

@@ -98,6 +98,7 @@
 			{{-- 未投稿画像の画像が無い時はフォームを表示しない --}}
 			@if(!$notmp)
 
+				<ul>{!!$addinfo!!}</ul>
 				<form class="" action="{{$self}}" method="post" enctype="multipart/form-data" @if(!$rewrite)id="comment_form"@endif>
 					<input type="hidden" name="token" value="{{$token}}">
 
@@ -188,7 +189,7 @@
 						@endif
 						@if($regist)
 						<tr>
-							<td>パスワード</td>
+							<td>削除編集パスワード</td>
 							<td><input class="form" type="password" name="pwd" value="" autocomplete="current-password">
 								<small>(記事の編集削除用)</small></td>
 						</tr>

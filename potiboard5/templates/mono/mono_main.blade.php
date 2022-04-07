@@ -56,6 +56,17 @@
 			<a href="{{$home}}" target="_top">[ホーム]</a>
 			@if($use_admin_link)<a href="{{$self}}?mode=admin">[管理モード]</a>@endif
 		</div>
+			<hr>
+		<div>
+			<p style="font-size: small;">うか・てき [伺的] 《形動》 伺かのように見える何か。「伺か」のキャラクターであってもなくてもよい。つまり割となんでも良い。【初出】勉強会</p>
+			
+			<p style="font-size: small; margin-top: 8px;">「お絵かき」でその場で描画可能。「投稿」で直接ファイル投稿可。ツール選択ができます。懐かしいUIならPaintBBS NEOかしぃペインター、本格的なやつならKlecksかChickenPaintで。なんでもお待ちしております。<br>
+			何かありましたら管理者まで。 <a href="https://ukadon.shillest.net/@ponapalt">Mastodon:ponapalt</a> / <a href="https://twitter.com/ponapalt">twitter:ponapalt</a></p>
+			
+			<p style="font-size: small; margin-top: 8px;"><span style="color: #009900; font-weight: bold; ">おすすめ：</span>投稿やレスのタイトル右の★ボタンで★マークをつけることができます。拍手的な使い方でなんとなくぽちっとしてみるといいと思います。<br>
+			左が<a href="https://nikolat.github.io/makibishi/">MAKIBISHI(登録不要、nostr参加者はアイコンがつく)</a>で、右が<a href="https://s.hatena.ne.jp/">はてなスター(はてな登録必須)</a>になります<br>
+			<span style="color: #009900;">星が増えるときっとやる気も増える。ちなみに黄色の★なら何度でも押せるぞ。</span></p>
+		</div>
 		<hr>
 		<div>
 			<nav class="menu">
@@ -169,7 +180,7 @@
 						</tr>
 						@endif
 						<tr>
-							<td>パスワード</td>
+							<td>削除編集パスワード</td>
 							<td><input class="form" type="password" name="pwd" value=""
 									autocomplete="current-password"><small>(記事の編集削除用)</small></td>
 						</tr>
