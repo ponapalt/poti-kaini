@@ -11,3 +11,14 @@
 <Files "manifest.json">
 	Require all granted
 </Files>
+
+<FilesMatch "\.php$">
+  AuthName      "User=sakura Password=unyu"
+  AuthType      Basic
+  AuthUserFile  /home/web/bts/anonymous.pwd
+  <LimitExcept GET>
+  Require valid-user
+  </LimitExcept>
+</FilesMatch>
+
+DirectoryIndex index.html
