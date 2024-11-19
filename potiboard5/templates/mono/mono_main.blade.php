@@ -16,6 +16,8 @@
 			display: none;
 		}
 	</style>
+
+	<script src="https://cdn.jsdelivr.net/npm/@nikolat/makibishi@0"></script>
 	
 	<script type="text/javascript" src="https://s.hatena.ne.jp/js/HatenaStar.js"></script>
 
@@ -252,6 +254,7 @@
 							href="{{$res['url']}}" target="_blank" rel="nofollow noopener noreferrer">URL</a>]</span>
 					@endif @if($res['updatemark']){{$res['updatemark']}}@endif
 				@endif
+				<span class="makibishi" data-url="https://oekaki.shillest.net/res/{{$res['no']}}" data-allow-anonymous-reaction="true"></span>
 				<span class="hstar"></span>
 				</h3>
 				<hr>
@@ -272,6 +275,7 @@
 								target="_blank" rel="nofollow noopener noreferrer">URL</a>]</span>@endif
 						@if($res['updatemark']) {{$res['updatemark']}}@endif
 					@endif
+					<span class="makibishi" data-url="https://oekaki.shillest.net/res/{{$ress[0]['no']}}-{{$res['no']}}" data-allow-anonymous-reaction="true"></span>
 					</h4>
 				{{-- 子レスヘッダここまで --}}
 				@endif

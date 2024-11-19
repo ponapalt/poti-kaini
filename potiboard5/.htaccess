@@ -22,3 +22,20 @@
 </FilesMatch>
 
 DirectoryIndex index.html
+
+# .htaccess
+RewriteEngine On
+
+# Base URL設定
+RewriteBase /
+
+# Redirect /res/XXX to potiboard.php?res=XXX
+RewriteRule ^res/([0-9]+)$ /potiboard.php?res=$1 [L,R=301]
+
+# Redirect /res/XXX-YYY to potiboard.php?res=XXX#XXX-YYY
+RewriteRule ^res/([0-9]+)-([0-9]+)$ /potiboard.php?res=$1#$1-$2 [L,R=301,NE]
+
+# Forward all other requests to the PHP script
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ redirect.php [L]
