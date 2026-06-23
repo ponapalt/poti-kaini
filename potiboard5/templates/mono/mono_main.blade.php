@@ -11,6 +11,7 @@
 	<link rel="preload" as="script" href="lib/lightbox/js/lightbox.min.js">
 	<link rel="preload" as="script" href="loadcookie.js?{{$ver}}">
 	<link rel="preload" as="script" href="{{$skindir}}js/mono_common.js?{{$ver}}">
+	<link rel="alternate" type="application/rss+xml" href="potirss.php" />
 	<style>
 		.input_disp_none {
 			display: none;
@@ -85,6 +86,7 @@
 			
 			<p style="font-size: small; margin-top: 8px;">「お絵かき」でその場で描画可能。「投稿」で直接ファイル投稿可。ツール選択ができます。懐かしいUIならPaintBBS NEOかしぃペインター、本格的なやつならKlecksかChickenPaintで。なんでもお待ちしております。<br>
 			何かありましたら管理者まで。 <a href="https://ukadon.shillest.net/@ponapalt">Mastodon:ponapalt</a> / <a href="https://twitter.com/ponapalt">twitter:ponapalt</a></p>
+			<p style="font-size: small; margin-top: 8px;"><a href="potirss.php">RSS Feed</a></p>
 			
 			<p style="font-size: small; margin-top: 8px;"><span style="color: #009900; font-weight: bold; ">おすすめ：</span>投稿やレスのタイトル右の★ボタンで★マークをつけることができます。拍手的な使い方でなんとなくぽちっとしてみるといいと思います。<br>
 			左が<a href="https://nikolat.github.io/makibishi/">MAKIBISHI(登録不要、nostr参加者はアイコンがつく)</a>で、右が<a href="https://s.hatena.ne.jp/">はてなスター(はてな登録必須)</a>になります<br>
